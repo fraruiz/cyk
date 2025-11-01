@@ -1,14 +1,18 @@
-create table if not exists GLC (
-    START boolean not null,
-    LEFT_SYMBOL text not null,
-    FIRST_RIGHT_SYMBOL text not null,
-    SECOND_RIGHT_SYMBOL text,
-    TYPE smallint not null
+CREATE TABLE GLC_en_FNC (
+    start boolean,
+    parte_izq text,
+    parte_der1 text,
+    parte_der2 text,
+    tipo_produccion smallint -- 1 para Var -> terminal, 2 para Var -> Var1 Var2
 );
 
+CREATE TABLE matriz_cyk (
+    i smallint,
+    j smallint,
+    x text[] -- Arreglo de texto para representar el conjunto de variables Xij
+);
 
-create table if not exists CYK_MATRIX (
-    I smallint not null,
-    J smallint not null,
-    X text not null
+CREATE TEMP TABLE IF NOT EXISTS tokens_entrada (
+    indice serial PRIMARY KEY,
+    token text
 );
