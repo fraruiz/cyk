@@ -1,0 +1,9 @@
+[
+    {
+        "START": true, 
+        "LEFT_SYMBOL": "S", 
+        "FIRST_RIGHT_SYMBOL": "A", 
+        "SECOND_RIGHT_SYMBOL": "B", 
+        "TYPE": "1"
+    }
+]
