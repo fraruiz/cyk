@@ -1,9 +1,58 @@
 [
     {
-        "START": true, 
-        "LEFT_SYMBOL": "S", 
-        "FIRST_RIGHT_SYMBOL": "A", 
-        "SECOND_RIGHT_SYMBOL": "B", 
-        "TYPE": "1"
+      "START": true,
+      "LEFT_SYMBOL": "S",
+      "FIRST_RIGHT_SYMBOL": "A",
+      "SECOND_RIGHT_SYMBOL": "B",
+      "TYPE": "2" 
+    },
+    {
+      "START": false,
+      "LEFT_SYMBOL": "S",
+      "FIRST_RIGHT_SYMBOL": "B",
+      "SECOND_RIGHT_SYMBOL": "C",
+      "TYPE": "2"
+    },
+    {
+      "START": false,
+      "LEFT_SYMBOL": "A",
+      "FIRST_RIGHT_SYMBOL": "B",
+      "SECOND_RIGHT_SYMBOL": "A",
+      "TYPE": "2"
+    },
+    {
+      "START": false,
+      "LEFT_SYMBOL": "B",
+      "FIRST_RIGHT_SYMBOL": "C",
+      "SECOND_RIGHT_SYMBOL": "C",
+      "TYPE": "2"
+    },
+    {
+      "START": false,
+      "LEFT_SYMBOL": "C",
+      "FIRST_RIGHT_SYMBOL": "A",
+      "SECOND_RIGHT_SYMBOL": "B",
+      "TYPE": "2"
+    },
+    {
+      "START": false,
+      "LEFT_SYMBOL": "A",
+      "FIRST_RIGHT_SYMBOL": "a",
+      "SECOND_RIGHT_SYMBOL": null,
+      "TYPE": "1" 
+    },
+    {
+      "START": false,
+      "LEFT_SYMBOL": "B",
+      "FIRST_RIGHT_SYMBOL": "b",
+      "SECOND_RIGHT_SYMBOL": null,
+      "TYPE": "1" 
+    },
+    {
+      "START": false,
+      "LEFT_SYMBOL": "C",
+      "FIRST_RIGHT_SYMBOL": "a",
+      "SECOND_RIGHT_SYMBOL": null,
+      "TYPE": "1" 
     }
-]
+  ]
