@@ -105,84 +105,77 @@ CREATE OR REPLACE FUNCTION get_production_combinations(first_cell int[], second_
         results jsonb[];
     BEGIN
         WITH FIRST_BASE AS (
-            SELECT UNNEST(M.X) AS VAL
+            SELECT UNNEST(M.X::text[]) AS VAL
             FROM CYK_MATRIX M
             WHERE M.I = first_cell[1]
             AND M.J = first_cell[2]
-            -- Valida que no tenga producciones vacias
             AND M.X IS NOT NULL
-            AND array_length(M.X, 1) > 0
+            AND array_length(M.X::text[], 1) > 0
         ), SECOND_BASE AS (
-            SELECT UNNEST(M.X) AS VAL
+            SELECT UNNEST(M.X::text[]) AS VAL
             FROM CYK_MATRIX M
             WHERE M.I = second_cell[1]
             AND M.J = second_cell[2]
-            -- Valida que no tenga producciones vacias
             AND M.X IS NOT NULL
-            AND array_length(M.X, 1) > 0
-            
+            AND array_length(M.X::text[], 1) > 0
         )
         SELECT array_agg(
-                jsonb_build_object(
-                    'first_value', F.VAL,
-                    'second_value', S.VAL
-                )
-            ) INTO results
+            jsonb_build_object(
+                'first_value', F.VAL,
+                'second_value', S.VAL
+            )
+        ) INTO results
         FROM FIRST_BASE F, SECOND_BASE S;
 
         RETURN results;
     END;
 $$;
 
-
 CREATE OR REPLACE FUNCTION solve_cell(cell int[]) RETURNS void LANGUAGE plpgsql AS $$
     DECLARE
-        combinations jsonb[];
-        combination jsonb;
-        first_cell int[];
-        second_cell int[];
-        results jsonb[];
-        result jsonb;
-        production text;
-        productions text[];
+        combinations jsonb[]; 
+        combination jsonb;    
+        first_cell int[];     
+        second_cell int[];    
+        results jsonb[];      
+        result jsonb;         
+        new_productions text[]; 
     BEGIN
         SELECT get_combinations(cell) INTO combinations;
 
         FOREACH combination IN ARRAY combinations LOOP
-            SELECT ARRAY[
-                (combination->'first_cell'->>'i')::int,
-                (combination->'first_cell'->>'j')::int
-            ] INTO first_cell;
-            SELECT ARRAY[
-                (combination->'second_cell'->>'i')::int,
-                (combination->'second_cell'->>'j')::int
-            ] INTO second_cell;
+            SELECT ARRAY[(combination->'first_cell'->>'i')::int, (combination->'first_cell'->>'j')::int] INTO first_cell;
+            SELECT ARRAY[(combination->'second_cell'->>'i')::int, (combination->'second_cell'->>'j')::int] INTO second_cell;
 
             SELECT get_production_combinations(first_cell, second_cell) INTO results;
 
             IF results IS NULL THEN
-                CONTINUE;
+                CONTINUE; 
             END IF;
 
             FOREACH result IN ARRAY results LOOP
-                SELECT G.LEFT_SYMBOL 
-                INTO production
-                FROM GLC G 
-                WHERE G.FIRST_RIGHT_SYMBOL = result->>'first_value'
+                
+                SELECT ARRAY_AGG(G.LEFT_SYMBOL)
+                INTO new_productions
+                FROM GLC G
+                WHERE G.TYPE = 2 
+                AND G.FIRST_RIGHT_SYMBOL = result->>'first_value'
                 AND G.SECOND_RIGHT_SYMBOL = result->>'second_value';
 
-                IF production IS NOT NULL THEN
-                    SELECT X INTO productions
-                    FROM CYK_MATRIX AS M
-                    WHERE M.I = cell[1] AND M.J = cell[2];
-
-                    IF production IS NULL THEN
-                        CONTINUE;
-                    END IF;
-        
+                IF new_productions IS NOT NULL AND array_length(new_productions, 1) > 0 THEN
+                    
                     UPDATE CYK_MATRIX AS M
-                    SET X = COALESCE(productions, ARRAY[]::text[]) || ARRAY[production]
+                    SET X = (
+                        SELECT ARRAY_AGG(sym)
+                        FROM (
+                            SELECT UNNEST(
+                                COALESCE(M.X::text[], ARRAY[]::text[]) || new_productions
+                            ) AS sym 
+                            GROUP BY 1
+                        ) AS unique_symbols
+                    )
                     WHERE M.I = cell[1] AND M.J = cell[2];
+                    
                 END IF;
             END LOOP;
         END LOOP;
@@ -222,6 +215,7 @@ CREATE OR REPLACE FUNCTION solve_matrix(string text) RETURNS void LANGUAGE plpgs
     END;
 $$;
 
+
 CREATE OR REPLACE FUNCTION evaluate_result(string text) RETURNS boolean LANGUAGE plpgsql AS $$
     DECLARE
         size int;
@@ -239,10 +233,10 @@ CREATE OR REPLACE FUNCTION evaluate_result(string text) RETURNS boolean LANGUAGE
         INTO result
         FROM CYK_MATRIX M
         WHERE M.I = 1 AND M.J = size
-        AND start_symbol = ANY(M.X);
+        AND start_symbol = ANY(M.X::TEXT[]); 
 
         IF result IS NOT NULL THEN
-            RETURN result;
+            RETURN TRUE;
         ELSE
             RETURN FALSE;
         END IF;
@@ -264,4 +258,23 @@ CREATE OR REPLACE FUNCTION cyk(string text) RETURNS text LANGUAGE plpgsql AS $$
         
         RETURN result;
     END;
+$$;
+
+CREATE OR REPLACE FUNCTION view_cyk_matrix()
+RETURNS TABLE (
+    longitud_nivel int,
+    fila_matriz text
+)
+LANGUAGE sql AS $$
+    SELECT
+        M.J - M.I + 1 AS longitud_nivel,
+
+        STRING_AGG(
+            '[' || ARRAY_TO_STRING(M.X::TEXT[], ', ') || ']'
+            , ' | '
+            ORDER BY M.I ASC
+        ) AS fila_matriz
+    FROM CYK_MATRIX M
+    GROUP BY 1
+    ORDER BY 1 DESC;
 $$;

@@ -7,7 +7,7 @@
       "TYPE": "2" 
     },
     {
-      "START": false,
+      "START": true,
       "LEFT_SYMBOL": "S",
       "FIRST_RIGHT_SYMBOL": "B",
       "SECOND_RIGHT_SYMBOL": "C",
