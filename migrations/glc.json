@@ -1,58 +1,1374 @@
 [
     {
-      "START": true,
-      "LEFT_SYMBOL": "S",
-      "FIRST_RIGHT_SYMBOL": "A",
-      "SECOND_RIGHT_SYMBOL": "B",
-      "TYPE": "2" 
+        "START": true,
+        "LEFT_SYMBOL": "S",
+        "FIRST_RIGHT_SYMBOL": "LEFT_CURLY_BRACKET",
+        "SECOND_RIGHT_SYMBOL": "PAIRS_RIGHT_CURLY_BRACKET",
+        "TYPE": "2"
     },
     {
-      "START": true,
-      "LEFT_SYMBOL": "S",
-      "FIRST_RIGHT_SYMBOL": "B",
-      "SECOND_RIGHT_SYMBOL": "C",
-      "TYPE": "2"
+        "START": true,
+        "LEFT_SYMBOL": "S",
+        "FIRST_RIGHT_SYMBOL": "LEFT_CURLY_BRACKET",
+        "SECOND_RIGHT_SYMBOL": "RIGHT_CURLY_BRACKET",
+        "TYPE": "2"
     },
     {
-      "START": false,
-      "LEFT_SYMBOL": "A",
-      "FIRST_RIGHT_SYMBOL": "B",
-      "SECOND_RIGHT_SYMBOL": "A",
-      "TYPE": "2"
+        "START": false,
+        "LEFT_SYMBOL": "PAIRS",
+        "FIRST_RIGHT_SYMBOL": "KEY",
+        "SECOND_RIGHT_SYMBOL": "COLON_VALUE",
+        "TYPE": "2"
     },
     {
-      "START": false,
-      "LEFT_SYMBOL": "B",
-      "FIRST_RIGHT_SYMBOL": "C",
-      "SECOND_RIGHT_SYMBOL": "C",
-      "TYPE": "2"
+        "START": false,
+        "LEFT_SYMBOL": "PAIRS",
+        "FIRST_RIGHT_SYMBOL": "PAIR",
+        "SECOND_RIGHT_SYMBOL": "COMMA_PAIRS",
+        "TYPE": "2"
     },
     {
-      "START": false,
-      "LEFT_SYMBOL": "C",
-      "FIRST_RIGHT_SYMBOL": "A",
-      "SECOND_RIGHT_SYMBOL": "B",
-      "TYPE": "2"
+        "START": false,
+        "LEFT_SYMBOL": "PAIR",
+        "FIRST_RIGHT_SYMBOL": "KEY",
+        "SECOND_RIGHT_SYMBOL": "COLON_VALUE",
+        "TYPE": "2"
     },
     {
-      "START": false,
-      "LEFT_SYMBOL": "A",
-      "FIRST_RIGHT_SYMBOL": "a",
-      "SECOND_RIGHT_SYMBOL": null,
-      "TYPE": "1" 
+        "START": false,
+        "LEFT_SYMBOL": "KEY",
+        "FIRST_RIGHT_SYMBOL": "QUOTE",
+        "SECOND_RIGHT_SYMBOL": "CHARS_QUOTE",
+        "TYPE": "2"
     },
     {
-      "START": false,
-      "LEFT_SYMBOL": "B",
-      "FIRST_RIGHT_SYMBOL": "b",
-      "SECOND_RIGHT_SYMBOL": null,
-      "TYPE": "1" 
+        "START": false,
+        "LEFT_SYMBOL": "KEY",
+        "FIRST_RIGHT_SYMBOL": "QUOTE",
+        "SECOND_RIGHT_SYMBOL": "QUOTE",
+        "TYPE": "2"
     },
     {
-      "START": false,
-      "LEFT_SYMBOL": "C",
-      "FIRST_RIGHT_SYMBOL": "a",
-      "SECOND_RIGHT_SYMBOL": null,
-      "TYPE": "1" 
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "N_U",
+        "SECOND_RIGHT_SYMBOL": "L_L",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "T_R",
+        "SECOND_RIGHT_SYMBOL": "U_E",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "F",
+        "SECOND_RIGHT_SYMBOL": "A_L_S_E",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "0",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "1",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "2",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "3",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "4",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "5",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "6",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "7",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "8",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "9",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "NUMERIC",
+        "SECOND_RIGHT_SYMBOL": "INTEGER",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "QUOTE",
+        "SECOND_RIGHT_SYMBOL": "CHARS_QUOTE",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "QUOTE",
+        "SECOND_RIGHT_SYMBOL": "QUOTE",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "LEFT_CURLY_BRACKET",
+        "SECOND_RIGHT_SYMBOL": "PAIRS_RIGHT_CURLY_BRACKET",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "VALUE",
+        "FIRST_RIGHT_SYMBOL": "LEFT_CURLY_BRACKET",
+        "SECOND_RIGHT_SYMBOL": "RIGHT_CURLY_BRACKET",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "A",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "B",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "C",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "D",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "E",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "F",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "G",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "H",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "I",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "J",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "K",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "L",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "M",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "N",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "O",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "P",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "Q",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "R",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "S",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "T",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "U",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "V",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "W",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "X",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "Y",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "Z",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "a",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "b",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "c",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "d",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "e",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "f",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "g",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "h",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "i",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "j",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "k",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "l",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "m",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "n",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "o",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "p",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "q",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "r",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "s",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "t",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "u",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "v",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "w",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "x",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "y",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "z",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "1",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "2",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "3",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "4",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "5",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "6",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "7",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "8",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "9",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "0",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS",
+        "FIRST_RIGHT_SYMBOL": "CHAR",
+        "SECOND_RIGHT_SYMBOL": "CHARS",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "INTEGER",
+        "FIRST_RIGHT_SYMBOL": "0",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "INTEGER",
+        "FIRST_RIGHT_SYMBOL": "1",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "INTEGER",
+        "FIRST_RIGHT_SYMBOL": "2",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "INTEGER",
+        "FIRST_RIGHT_SYMBOL": "3",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "INTEGER",
+        "FIRST_RIGHT_SYMBOL": "4",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "INTEGER",
+        "FIRST_RIGHT_SYMBOL": "5",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "INTEGER",
+        "FIRST_RIGHT_SYMBOL": "6",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "INTEGER",
+        "FIRST_RIGHT_SYMBOL": "7",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "INTEGER",
+        "FIRST_RIGHT_SYMBOL": "8",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "INTEGER",
+        "FIRST_RIGHT_SYMBOL": "9",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "INTEGER",
+        "FIRST_RIGHT_SYMBOL": "NUMERIC",
+        "SECOND_RIGHT_SYMBOL": "INTEGER",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "NUMERIC",
+        "FIRST_RIGHT_SYMBOL": "0",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "NUMERIC",
+        "FIRST_RIGHT_SYMBOL": "1",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "NUMERIC",
+        "FIRST_RIGHT_SYMBOL": "2",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "NUMERIC",
+        "FIRST_RIGHT_SYMBOL": "3",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "NUMERIC",
+        "FIRST_RIGHT_SYMBOL": "4",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "NUMERIC",
+        "FIRST_RIGHT_SYMBOL": "5",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "NUMERIC",
+        "FIRST_RIGHT_SYMBOL": "6",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "NUMERIC",
+        "FIRST_RIGHT_SYMBOL": "7",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "NUMERIC",
+        "FIRST_RIGHT_SYMBOL": "8",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "NUMERIC",
+        "FIRST_RIGHT_SYMBOL": "9",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "A",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "B",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "C",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "D",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "E",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "F",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "G",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "H",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "I",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "J",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "K",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "L",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "M",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "N",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "O",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "P",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "Q",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "R",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "S",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "T",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "U",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "V",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "W",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "X",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "Y",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "Z",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "a",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "b",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "c",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "d",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "e",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "f",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "g",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "h",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "i",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "j",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "k",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "l",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "m",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "n",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "o",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "p",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "q",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "r",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "s",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "t",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "u",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "v",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "w",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "x",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "y",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "z",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "1",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "2",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "3",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "4",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "5",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "6",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "7",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "8",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "9",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHAR",
+        "FIRST_RIGHT_SYMBOL": "0",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "LEFT_CURLY_BRACKET",
+        "FIRST_RIGHT_SYMBOL": "{",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "RIGHT_CURLY_BRACKET",
+        "FIRST_RIGHT_SYMBOL": "}",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "QUOTE",
+        "FIRST_RIGHT_SYMBOL": "\"",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "COLON",
+        "FIRST_RIGHT_SYMBOL": ":",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "COMMA",
+        "FIRST_RIGHT_SYMBOL": ",",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "CHARS_QUOTE",
+        "FIRST_RIGHT_SYMBOL": "CHARS",
+        "SECOND_RIGHT_SYMBOL": "QUOTE",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "COMMA_PAIRS",
+        "FIRST_RIGHT_SYMBOL": "COMMA",
+        "SECOND_RIGHT_SYMBOL": "PAIRS",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "COLON_VALUE",
+        "FIRST_RIGHT_SYMBOL": "COLON",
+        "SECOND_RIGHT_SYMBOL": "VALUE",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "PAIRS_RIGHT_CURLY_BRACKET",
+        "FIRST_RIGHT_SYMBOL": "PAIRS",
+        "SECOND_RIGHT_SYMBOL": "RIGHT_CURLY_BRACKET",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "N",
+        "FIRST_RIGHT_SYMBOL": "n",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "U",
+        "FIRST_RIGHT_SYMBOL": "u",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "L",
+        "FIRST_RIGHT_SYMBOL": "l",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "T",
+        "FIRST_RIGHT_SYMBOL": "t",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "R",
+        "FIRST_RIGHT_SYMBOL": "r",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "E",
+        "FIRST_RIGHT_SYMBOL": "e",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "F",
+        "FIRST_RIGHT_SYMBOL": "f",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "A",
+        "FIRST_RIGHT_SYMBOL": "a",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": true,
+        "LEFT_SYMBOL": "S",
+        "FIRST_RIGHT_SYMBOL": "s",
+        "SECOND_RIGHT_SYMBOL": null,
+        "TYPE": "1"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "L_L",
+        "FIRST_RIGHT_SYMBOL": "L",
+        "SECOND_RIGHT_SYMBOL": "L",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "N_U",
+        "FIRST_RIGHT_SYMBOL": "N",
+        "SECOND_RIGHT_SYMBOL": "U",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "T_R",
+        "FIRST_RIGHT_SYMBOL": "T",
+        "SECOND_RIGHT_SYMBOL": "R",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "U_E",
+        "FIRST_RIGHT_SYMBOL": "U",
+        "SECOND_RIGHT_SYMBOL": "E",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "S_E",
+        "FIRST_RIGHT_SYMBOL": "S",
+        "SECOND_RIGHT_SYMBOL": "E",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "A_L",
+        "FIRST_RIGHT_SYMBOL": "A",
+        "SECOND_RIGHT_SYMBOL": "L",
+        "TYPE": "2"
+    },
+    {
+        "START": false,
+        "LEFT_SYMBOL": "A_L_S_E",
+        "FIRST_RIGHT_SYMBOL": "A_L",
+        "SECOND_RIGHT_SYMBOL": "S_E",
+        "TYPE": "2"
     }
-  ]
+]
