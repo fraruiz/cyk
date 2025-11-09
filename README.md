@@ -88,6 +88,18 @@ Sea w = `{"a":10,"b":"hola","c":{"d":"chau","e":99,"g":{"h":12}},"f":{}}`
 
 ```
 
+Sea w:`{"ca":{"e":99,"g":{"h":12}}}`
+
+![Árbol de parsing](Arbol_parcing2.png)
+
+```mermaid
+
+
+```
+
+
+
+
 ## 4. Aplicación de algoritmos de limpieza
 En el contexto de la formas normales de Chomsky, debemos aplicar, previo al proceso de normalización, los siguientes algoritmos de limpieza en orden:
 1. Eliminar ϵ-producciones
