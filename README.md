@@ -75,7 +75,165 @@ Sea w = `{"a":"hola","b":"chau","c":""}`
 
 Sea w = `{"a":10,"b":"hola","c":{"d":"chau","e":99},"f":{}}`
 ```mermaid
+ graph TD
 
+    %% Raíz
+    S --> LBRACE["{"]
+    S --> PAIRS
+    S --> RBRACE["}"]
+
+    %% Cadena principal de pares
+    PAIRS --> PAIR1
+    PAIRS --> COMMA1[","]
+    PAIRS --> PAIR2
+    PAIRS --> COMMA2[","]
+    PAIRS --> PAIR3
+    PAIRS --> COMMA3[","]
+    PAIRS --> PAIR4
+
+    %% ---------- PAIR 1: "a":10 ----------
+    PAIR1 --> KEY_p1
+    PAIR1 --> COLON_p1[":"]
+    PAIR1 --> VALUE_p1
+
+    KEY_p1 --> STR_p1
+    STR_p1 --> DQ_p1_open["\''"]
+    STR_p1 --> CHARS_p1
+    STR_p1 --> DQ_p1_close["\''"]
+
+    CHARS_p1 --> CHAR_p1_a
+    CHAR_p1_a --> LIT_a_p1["a"]
+
+    VALUE_p1 --> INT_p1
+    INT_p1 --> NUM_1["1"]
+    INT_p1 --> INT_p2
+    INT_p2 --> NUM_0["0"]
+
+
+    %% ---------- PAIR 2: "b":"hola" ----------
+    PAIR2 --> KEY_p2
+    PAIR2 --> COLON_p2[":"]
+    PAIR2 --> VALUE_p2
+
+    KEY_p2 --> STR_p2
+    STR_p2 --> DQ_p2_open["\''"]
+    STR_p2 --> CHARS_p2
+    STR_p2 --> DQ_p2_close["\''"]
+
+    CHARS_p2 --> CHAR_p2_b
+    CHAR_p2_b --> LIT_b_p2["b"]
+
+    VALUE_p2 --> STRVAL_p2
+    STRVAL_p2 --> DQ_p2v_open["\''"]
+    STRVAL_p2 --> CHARS_val_p2
+    STRVAL_p2 --> DQ_p2v_close["\''"]
+
+    CHARS_val_p2 --> CHAR_h_p2
+    CHAR_h_p2 --> LIT_h_p2["h"]
+    CHARS_val_p2 --> CHARS_val_p2_2
+    CHARS_val_p2_2 --> CHAR_o_p2
+    CHAR_o_p2 --> LIT_o_p2["o"]
+    CHARS_val_p2_2 --> CHARS_val_p2_3
+    CHARS_val_p2_3 --> CHAR_l_p2
+    CHAR_l_p2 --> LIT_l_p2["l"]
+    CHARS_val_p2_3 --> CHARS_val_p2_4
+    CHARS_val_p2_4 --> CHAR_a_p2
+    CHAR_a_p2 --> LIT_a_p2["a"]
+
+
+    %% ---------- PAIR 3: "c":{...} ----------
+    PAIR3 --> KEY_p3
+    PAIR3 --> COLON_p3[":"]
+    PAIR3 --> VALUE_p3
+
+    KEY_p3 --> STR_p3
+    STR_p3 --> DQ_p3_open["\''"]
+    STR_p3 --> CHARS_p3
+    STR_p3 --> DQ_p3_close["\''"]
+    CHARS_p3 --> CHAR_c_p3
+    CHAR_c_p3 --> LIT_c_p3["c"]
+
+    VALUE_p3 --> S_
+    S_ --> LBRACE_p3["{"]
+    S_ --> PAIRS_IN_p3
+    S_ --> RBRACE_p3["}"]
+
+    %% Pares internos
+    PAIRS_IN_p3 --> PAIR_IN1
+    PAIRS_IN_p3 --> COMMA_in_p3[","]
+    PAIRS_IN_p3 --> PAIR_IN2
+
+    %% --- "d":"chau"
+    PAIR_IN1 --> KEY_IN1
+PAIR_IN1 --> COLON_IN1[":"]
+PAIR_IN1 --> VALUE_IN1
+
+%% KEY = "d"
+KEY_IN1 --> STRING_IN1
+STRING_IN1 --> DQ9["\''"]
+STRING_IN1 --> CHARS_IN1
+STRING_IN1 --> DQ10["\''"]
+
+CHARS_IN1 --> CHAR_D
+CHAR_D --> D["d"]
+
+%% VALUE = "chau"
+VALUE_IN1 --> STRING_VAL_IN1
+STRING_VAL_IN1 --> DQ11["\''"]
+STRING_VAL_IN1 --> CHARS_VAL_IN1
+STRING_VAL_IN1 --> DQ12["\''"]
+
+CHARS_VAL_IN1 --> CHAR_C
+CHAR_C --> C2["c"]
+
+CHARS_VAL_IN1 --> CHARS_VAL2
+CHARS_VAL2 --> CHAR_H
+CHAR_H --> H2["h"]
+
+CHARS_VAL2 --> CHARS_VAL3
+CHARS_VAL3 --> CHAR_A
+CHAR_A --> A2["a"]
+
+CHARS_VAL3 --> CHARS_VAL4
+CHARS_VAL4 --> CHAR_U
+CHAR_U --> U["u"]
+
+   
+
+    %% --- "e":99
+    PAIR_IN2 --> KEY_in2
+    PAIR_IN2 --> COLON_in2[":"]
+    PAIR_IN2 --> VALUE_in2
+
+    KEY_in2 --> STR_in2
+    STR_in2 --> DQ_in2_open["\''"]
+    STR_in2 --> CHARS_in2
+    STR_in2 --> DQ_in2_close["\''"]
+    CHARS_in2 --> CHAR_e_in2
+    CHAR_e_in2 --> LIT_e_in2["e"]
+
+    VALUE_in2 --> INT_in2
+    INT_in2 --> NUM_in2_9a["9"]
+    INT_in2 --> NUM_in2_9b["9"]
+
+
+    %% ---------- PAIR 4: "f":{} ----------
+    PAIR4 --> KEY_p4
+    PAIR4 --> COLON_p4[":"]
+    PAIR4 --> VALUE_p4
+
+    KEY_p4 --> STR_p4
+    STR_p4 --> DQ_p4_open["\''"]
+    STR_p4 --> CHARS_p4
+    STR_p4 --> DQ_p4_close["\''"]
+    CHARS_p4 --> CHAR_f_p4
+    CHAR_f_p4 --> LIT_f_p4["f"]
+
+    VALUE_p4 --> OBJ_p4
+    OBJ_p4 --> LBRACE_p4["{"]
+    OBJ_p4 --> PAIRS_EMPTY_p4
+    OBJ_p4 --> RBRACE_p4["}"]
+    PAIRS_EMPTY_p4 --> EPS_EMPTY_p4["ε"]
 ```
 
 Sea w = `{}`
