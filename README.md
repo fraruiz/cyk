@@ -58,45 +58,14 @@ P = {
 ```
 
 ## 3. Árbol de parsing
-Sea w = `{"a":10}`
-```mermaid
-
-```
-
-Sea w = `{"a":10,"b":"hola"}`
-```mermaid
-
-```
-
-Sea w = `{"a":"hola","b":"chau","c":""}`
-```mermaid
-
-```
 
 Sea w = `{"a":10,"b":"hola","c":{"d":"chau","e":99},"f":{}}`
 <img width="7047" height="2782" alt="Arbol de parsing1" src="https://github.com/user-attachments/assets/765094b1-5bbe-4c16-80e8-323be8c1a2eb" />
 
-Sea w = `{}`
-```mermaid
 
-```
-
-Sea w = `{"a":10,"b":"hola","c":{"d":"chau","e":99,"g":{"h":12}},"f":{}}`
-```mermaid
-
-```
-
-Sea w:`{"ca":{"e":99,"g":{"h":12}}}`
+Sea w = `{"ca":{"e":99,"g":{"h":12}}}`
 
 ![Árbol de parsing](Arbol_parcing2.png)
-
-```mermaid
-
-
-```
-
-
-
 
 ## 4. Aplicación de algoritmos de limpieza
 En el contexto de la formas normales de Chomsky, debemos aplicar, previo al proceso de normalización, los siguientes algoritmos de limpieza en orden:
