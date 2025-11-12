@@ -60,7 +60,8 @@ P = {
 ## 3. Árbol de parsing
 
 Sea w = `{"a":10,"b":"hola","c":{"d":"chau","e":99},"f":{}}`
-<img width="7047" height="2782" alt="Arbol de parsing1" src="https://github.com/user-attachments/assets/765094b1-5bbe-4c16-80e8-323be8c1a2eb" />
+
+<img width="6259" height="2782" alt="Arbol de Parsing" src="https://github.com/user-attachments/assets/22c0a882-4538-4568-9c93-0c9fe6518897" />
 
 
 Sea w = `{"ca":{"e":99,"g":{"h":12}}}`
