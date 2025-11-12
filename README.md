@@ -390,4 +390,73 @@ P = {
 ```
 
 ## 6. Casos de pruebas
-[WIP]
+
+Vamos a mostrar casos de prueba válidos e inválidos que vamos a pasarle al parser CYK.
+
+### Caso 1:
+
+**Entrada:**  
+`{"a":10,"b":"hola","c":{"d":"chau","e":99},"f":{}}`
+
+- **Esperado:** Válido  
+
+---
+
+### Caso 2:
+
+**Entrada:**  
+`{"ca":{"e":99,"g":{"h":12}}}`
+
+- **Esperado:** Válido  
+
+---
+
+### Caso 3:
+
+**Entrada:**  
+`{"x":0,"y":100,"txt":"abc"}`
+
+- **Esperado:** Válido
+
+---
+
+### Caso 4:
+
+**Entrada:**  
+`{"a":10,}`
+
+- **Esperado:** Inválido
+
+---
+
+### Caso 5:
+
+**Entrada:**  
+`{"a":@}`
+
+- **Esperado:** Inválido (carácter `'@'` no permitido)
+
+---
+
+
+## 7. Nueva Gramática Libre de Contexto (GLC) para Expresiones Aritméticas
+
+Presentamos una nueva GLC, pero para reconocer expresiones aritméticas: 
+
+```
+S -> SA | B G | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | ND
+A -> OS
+O -> + | - | * | /
+G -> SC
+B -> (
+C -> )
+N -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | ND
+D -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+```
+
+### ¿Qué reconoce esta gramática?
+
+La gramática reconoce expresiones matemáticas como sumas, restas, multiplicaciones y divisiones, usando solo los símbolos `+`, `-`, `*`, y `/`. Además, podemos agregar paréntesis marcando así un orden en las cuentas.
+
+Por ejemplo, acepta expresiones como `(111+22)` o `(3*(4343+55))`.
+
