@@ -61,7 +61,8 @@ P = {
 
 Sea w = `{"a":10,"b":"hola","c":{"d":"chau","e":99},"f":{}}`
 
-<img width="6259" height="2782" alt="Arbol de Parsing" src="https://github.com/user-attachments/assets/22c0a882-4538-4568-9c93-0c9fe6518897" />
+<img width="6213" height="3162" alt="Arbol de parsing (1)" src="https://github.com/user-attachments/assets/1f6db6de-9d7b-4415-8512-151b1e75f7a0" />
+
 
 
 Sea w = `{"ca":{"e":99,"g":{"h":12}}}`
