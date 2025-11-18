@@ -444,19 +444,19 @@ Vamos a mostrar casos de prueba válidos e inválidos que vamos a pasarle al par
 Presentamos una nueva GLC, pero para reconocer expresiones aritméticas: 
 
 ```
-S -> SA | B G | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | ND
-A -> OS
-O -> + | - | * | /
-G -> SC
-B -> (
-C -> )
-N -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | ND
-D -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+S → SA | B G | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | ND
+A → OS
+O → + | - | * | /
+G → SC
+B → (
+C → )
+N → 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | ND
+D → 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 ```
 
 ### ¿Qué reconoce esta gramática?
 
 La gramática reconoce expresiones matemáticas como sumas, restas, multiplicaciones y divisiones, usando solo los símbolos `+`, `-`, `*`, y `/`. Además, podemos agregar paréntesis marcando así un orden en las cuentas.
 
-Por ejemplo, acepta expresiones como `(111+22)` o `(3*(4343+55))`.
+Por ejemplo, acepta expresiones como `(1+2)`, `(111+22)` o `(3*(4343+55))`.
 
