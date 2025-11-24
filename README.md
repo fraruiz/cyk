@@ -61,13 +61,11 @@ P = {
 
 Sea w = `{"a":10,"b":"hola","c":{"d":"chau","e":99},"f":{}}`
 
-<img width="6213" height="3162" alt="Arbol de parsing (1)" src="https://github.com/user-attachments/assets/1f6db6de-9d7b-4415-8512-151b1e75f7a0" />
-
-
+![Árbol de parsing](./resources/020384dd-4515-40c0-b7a9-c8b09c3de391.png)
 
 Sea w = `{"ca":{"e":99,"g":{"h":12}}}`
 
-![Árbol de parsing](Arbol_parcing2.png)
+![Árbol de parsing](./resources/c8920f5e-cf93-448f-9ef4-557bd1acc6e3.png)
 
 ## 4. Aplicación de algoritmos de limpieza
 En el contexto de la formas normales de Chomsky, debemos aplicar, previo al proceso de normalización, los siguientes algoritmos de limpieza en orden:
@@ -442,22 +440,26 @@ Vamos a mostrar casos de prueba válidos e inválidos que vamos a pasarle al par
 
 ## 7. Nueva Gramática Libre de Contexto (GLC) para Expresiones Aritméticas
 
-Presentamos una nueva GLC, pero para reconocer expresiones aritméticas: 
+Sea G = ⟨T, V, P, S⟩, donde las terminales y producciones son:
 
 ```
-S → SA | B G | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | ND
-A → OS
-O → + | - | * | /
-G → SC
-B → (
-C → )
-N → 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | ND
-D → 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+T = {+, -, *, /, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, (, )}
 ```
 
-### ¿Qué reconoce esta gramática?
+```
+P = {
+    S → SA | B G | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | ND
+    A → OS
+    O → + | - | * | /
+    G → SC
+    B → (
+    C → )
+    N → 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | ND
+    D → 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+}
+```
 
-La gramática reconoce expresiones matemáticas como sumas, restas, multiplicaciones y divisiones, usando solo los símbolos `+`, `-`, `*`, y `/`. Además, podemos agregar paréntesis marcando así un orden en las cuentas.
+Notemos que la gramática reconoce expresiones matemáticas como sumas, restas, multiplicaciones y divisiones, usando solo los símbolos `+`, `-`, `*`, y `/`. Además, podemos agregar paréntesis marcando así un orden en las cuentas.
 
 Por ejemplo, acepta expresiones como `(1+2)`, `(111+22)` o `(3*(4343+55))`.
 

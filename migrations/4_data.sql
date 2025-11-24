@@ -1,4 +1,4 @@
-\set content `cat /docker-entrypoint-initdb.d/data/json.json`
+\set content `cat /docker-entrypoint-initdb.d/data/calculator.json`
 
 INSERT INTO GLC (START, LEFT_SYMBOL, FIRST_RIGHT_SYMBOL, SECOND_RIGHT_SYMBOL, TYPE)
 SELECT

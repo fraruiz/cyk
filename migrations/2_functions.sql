@@ -1,3 +1,19 @@
+/*
+    Return the cells in a specific row (level) of the CYK matrix for calculating combinations. 
+    @parameters:
+        level: The current level (row) in the CYK matrix.
+        size: The total size of the input string.
+    @returns:
+        jsonb[]: An array of JSONB objects, each representing a cell in the specified
+    @example:
+        SELECT get_row_cells(2, 4);
+        Returns:
+        [
+            {"i":1, "j":2},
+            {"i":2, "j":3},
+            {"i":3, "j":4}
+        ]
+*/
 CREATE OR REPLACE FUNCTION get_row_cells(level int, size int) RETURNS jsonb[] LANGUAGE plpgsql AS $$
     DECLARE
         result jsonb[] := ARRAY[]::jsonb[];
@@ -13,6 +29,13 @@ CREATE OR REPLACE FUNCTION get_row_cells(level int, size int) RETURNS jsonb[] LA
     END;
 $$;
 
+/*
+    Clear all entries in the CYK matrix.
+    @parameters:
+        None
+    @returns:
+        void
+*/
 CREATE OR REPLACE FUNCTION clear_matrix() RETURNS void LANGUAGE plpgsql AS $$
     DECLARE
     BEGIN
@@ -20,6 +43,13 @@ CREATE OR REPLACE FUNCTION clear_matrix() RETURNS void LANGUAGE plpgsql AS $$
     END;
 $$;
 
+/*
+    Initialize the CYK matrix for a given row. This function inserts entries into the CYK_MATRIX table for the specified row between range 1 and row number.
+    @parameters:
+        value: The row of the matrix for initialize.
+    @returns:
+        void
+*/
 CREATE OR REPLACE FUNCTION set_matrix(value int) RETURNS void LANGUAGE plpgsql AS $$
     DECLARE
         index int;
@@ -30,7 +60,13 @@ CREATE OR REPLACE FUNCTION set_matrix(value int) RETURNS void LANGUAGE plpgsql A
     END;
 $$;
 
-
+/*
+    Prepare the CYK matrix for a given input string by initializing all necessary rows. This functions calculate size of the input string and calls set_matrix for each row.
+    @parameters:
+        string: The input string to be processed.
+    @returns:
+        void
+*/
 CREATE OR REPLACE FUNCTION prepare_matrix(string text) RETURNS void LANGUAGE plpgsql AS $$
     DECLARE
         range int;
@@ -44,6 +80,13 @@ CREATE OR REPLACE FUNCTION prepare_matrix(string text) RETURNS void LANGUAGE plp
     END;
 $$;
 
+/*
+    Calculate and fill the first row of the CYK matrix based on terminal productions from the grammar for each character in the input string.
+    @parameters:
+        string: The input string to be processed.
+    @returns:
+        void
+*/
 CREATE OR REPLACE FUNCTION solve_first_row(string text) RETURNS void LANGUAGE plpgsql AS $$
     DECLARE
         chars text[];
@@ -72,6 +115,13 @@ CREATE OR REPLACE FUNCTION solve_first_row(string text) RETURNS void LANGUAGE pl
     END;
 $$;
 
+/*
+    Calculate all possible combinations of two cells that can be used to fill a given cell in the CYK matrix.
+    @parameters:
+        cell: An array of two integers representing the cell [i, j].
+    @returns:
+        jsonb[]: An array of JSONB objects, each representing a combination of two cells
+*/
 CREATE OR REPLACE FUNCTION get_combinations(cell int[]) RETURNS jsonb[] LANGUAGE plpgsql AS $$
     DECLARE
         i int;
@@ -99,7 +149,14 @@ CREATE OR REPLACE FUNCTION get_combinations(cell int[]) RETURNS jsonb[] LANGUAGE
     END;
 $$;
 
-
+/*
+    From two given cells, retrieve all possible production combinations based on the grammar rules.
+    @parameters:
+        first_cell: An array of two integers representing the first cell [i, j].
+        second_cell: An array of two integers representing the second cell [i, j].
+    @returns:
+        jsonb[]: An array of JSONB objects, each representing a production combination
+*/
 CREATE OR REPLACE FUNCTION get_production_combinations(first_cell int[], second_cell int[]) RETURNS jsonb[] LANGUAGE plpgsql AS $$
     DECLARE
         results jsonb[];
@@ -131,6 +188,13 @@ CREATE OR REPLACE FUNCTION get_production_combinations(first_cell int[], second_
     END;
 $$;
 
+/*
+    Solve a specific cell in the CYK matrix by calculating possible productions based on combinations of two sub-cells.
+    @parameters:
+        cell: An array of two integers representing the cell [i, j].
+    @returns:
+        void
+*/
 CREATE OR REPLACE FUNCTION solve_cell(cell int[]) RETURNS void LANGUAGE plpgsql AS $$
     DECLARE
         combinations jsonb[]; 
@@ -182,7 +246,14 @@ CREATE OR REPLACE FUNCTION solve_cell(cell int[]) RETURNS void LANGUAGE plpgsql 
     END;
 $$;
 
-
+/*
+    Solve all cells in a specific row (level) of the CYK matrix.
+    @parameters:
+        level: The current level (row) in the CYK matrix.
+        size: The total size of the input string.
+    @returns:
+        void
+*/
 CREATE OR REPLACE FUNCTION solve_row(level int, size int) RETURNS void LANGUAGE plpgsql AS $$
     DECLARE
         cells jsonb[];
@@ -198,6 +269,13 @@ CREATE OR REPLACE FUNCTION solve_row(level int, size int) RETURNS void LANGUAGE 
     END;
 $$;
 
+/*
+    Principal function. This function solve the entire CYK matrix for a given input string by filling in all rows based on grammar productions.
+    @parameters:
+        string: The input string to be processed.
+    @returns:
+        void
+*/
 CREATE OR REPLACE FUNCTION solve_matrix(string text) RETURNS void LANGUAGE plpgsql AS $$
     DECLARE
         level int;
@@ -215,7 +293,13 @@ CREATE OR REPLACE FUNCTION solve_matrix(string text) RETURNS void LANGUAGE plpgs
     END;
 $$;
 
-
+/*
+    Evaluate if the input string can be generated by the grammar based on the filled CYK matrix.
+    @parameters:
+        string: The input string to be processed.
+    @returns:
+        boolean: Return TRUE, the start symbol of the grammar must be present in the top cell of the matrix. 
+*/
 CREATE OR REPLACE FUNCTION evaluate_result(string text) RETURNS boolean LANGUAGE plpgsql AS $$
     DECLARE
         size int;
@@ -243,7 +327,13 @@ CREATE OR REPLACE FUNCTION evaluate_result(string text) RETURNS boolean LANGUAGE
     END;
 $$;
 
-
+/*
+    Principal CYK function. This function orchestrates the entire CYK parsing process for a given input string.
+    @parameters:
+        string: The input string to be processed.
+    @returns:
+        text: 'true' if the string can be generated by the grammar, 'false' otherwise.
+*/
 CREATE OR REPLACE FUNCTION cyk(string text) RETURNS text LANGUAGE plpgsql AS $$
     DECLARE
         result boolean;
